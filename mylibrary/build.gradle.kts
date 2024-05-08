@@ -43,7 +43,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.aceware20"
             artifactId = "microatm"
-            version = "1.0.5"
+            version = "1.0.6"
 
             afterEvaluate {
                 from(components["release"])
@@ -66,7 +66,7 @@ dependencies {
     //
     implementation(files("libs/ksoap2-android-assembly-3.6.4-jar-with-dependencies.jar"))
     implementation(files("libs/morefun_mpos_sdk_v2.1.20210628.jar"))
-    implementation (project(":fingpaymicroatm-release"))
+    implementation (files("libs/fingpaymicroatm-release.aar"))
 //    api(fileTree(mapOf("include" to listOf("fingpaymicroatm-release.aar"), "dir" to "libs")))
 //    implementation(project(":finpay"))
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
