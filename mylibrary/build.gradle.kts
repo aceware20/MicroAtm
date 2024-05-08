@@ -27,6 +27,26 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+}
+
+publishing {
+    publications {
+        register<MavenPublication>("release") {
+            groupId = "com.github.aceware20"
+            artifactId = "microatm"
+            version = "1.0.2"
+
+            afterEvaluate {
+                from(components["release"])
+            }
+        }
+    }
 }
 
 dependencies {
