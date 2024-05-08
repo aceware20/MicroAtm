@@ -29,8 +29,8 @@ android {
     }
     publishing {
         singleVariant("release") {
-            withSourcesJar()
-            withJavadocJar()
+//            withSourcesJar()
+//            withJavadocJar()
         }
     }
     buildFeatures {
@@ -43,7 +43,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.aceware20"
             artifactId = "microatm"
-            version = "1.0.4"
+            version = "1.0.5"
 
             afterEvaluate {
                 from(components["release"])

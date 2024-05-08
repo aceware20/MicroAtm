@@ -42,6 +42,6 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(project(":mylibrary"))
-    implementation ("com.github.aceware20:microatm:1.0.3")
+//    implementation (libs.microatm)
     implementation ("com.google.code.gson:gson:2.10.1")
 }
