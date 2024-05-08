@@ -1,5 +1,6 @@
 package com.acemoney.microatm;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.activity.EdgeToEdge;
@@ -9,19 +10,27 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.acemoney.mylibrary.Test;
+import com.acemoney.mylibrary.utils.AceMatm;
+import com.google.gson.JsonObject;
 
 
-public class MainActivity extends AppCompatActivity {
-    Test test;
+public class MainActivity extends AppCompatActivity implements AceMatm.ResponseListener {
+    private AceMatm aceMatm;
+    private String Agent_email;
+    private Activity activity=this;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
-        });
+        Agent_email="sruthys240@gmail.com";
+        AceMatm aceMatm= AceMatm.getInstance(activity, Agent_email);
+        aceMatm.setUI(true);
+        aceMatm.setResponseListener(this);
+    }
+
+    @Override
+    public void onResult(JsonObject jsonData) {
+
     }
 }
