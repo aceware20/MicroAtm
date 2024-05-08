@@ -41,5 +41,6 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(project(":mylibrary"))
+//    implementation(project(":mylibrary"))
+    implementation ("com.github.aceware20:microatm:1.0.3")
 }
