@@ -30,6 +30,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding=true
+    }
 }
 
 dependencies {
@@ -41,7 +44,8 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
-    implementation(project(":mylibrary"))
+    implementation(files("libs/mylibrary-release.aar"))
+//    implementation(project(":mylibrary"))
 //    implementation (libs.microatm)
     implementation ("com.google.code.gson:gson:2.10.1")
 }

@@ -19,9 +19,12 @@ dependencyResolutionManagement {
 //        maven ("https://jitpack.io")
         maven { url=uri ("https://jitpack.io") }
     }
+
 }
+
+
 
 rootProject.name = "MicroAtm"
 include(":app")
 include(":mylibrary")
-//include (":fingpaymicroatm-release")
+include (":fingpaymicroatm-release")

@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
     id("maven-publish")
+//    id ("com.kezong.fat-aar")
 }
 
 android {
@@ -29,8 +30,8 @@ android {
     }
     publishing {
         singleVariant("release") {
-//            withSourcesJar()
-//            withJavadocJar()
+            withSourcesJar()
+            withJavadocJar()
         }
     }
     buildFeatures {
@@ -43,7 +44,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.aceware20"
             artifactId = "microatm"
-            version = "1.0.6"
+            version = "1.0.7"
 
             afterEvaluate {
                 from(components["release"])
@@ -66,16 +67,16 @@ dependencies {
     //
     implementation(files("libs/ksoap2-android-assembly-3.6.4-jar-with-dependencies.jar"))
     implementation(files("libs/morefun_mpos_sdk_v2.1.20210628.jar"))
-    implementation (files("libs/fingpaymicroatm-release.aar"))
+    implementation (project(":fingpaymicroatm-release"))
 //    api(fileTree(mapOf("include" to listOf("fingpaymicroatm-release.aar"), "dir" to "libs")))
 //    implementation(project(":finpay"))
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation ("com.squareup.okhttp3:logging-interceptor:4.9.3")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation ("com.squareup.okio:okio:3.8.0")
-    implementation ("com.google.code.gson:gson:2.10.1")
-    implementation("com.squareup.retrofit2:converter-scalars:2.9.0")
-    implementation("org.bouncycastle:bcprov-jdk15on:1.68")
+    implementation(libs.retrofit)
+    implementation(libs.converter.gson)
+    implementation (libs.logging.interceptor)
+    implementation(libs.okhttp)
+    implementation (libs.okio)
+    implementation (libs.gson)
+    implementation(libs.converter.scalars)
+    implementation(libs.bcprov.jdk15on)
 
 }
