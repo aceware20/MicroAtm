@@ -35,4 +35,4 @@ dependencyResolutionManagement {
 rootProject.name = "MicroAtm"
 include(":app")
 include(":mylibrary")
-include (":fingpaymicroatm-release")
+include (":acemicroatm-release")
