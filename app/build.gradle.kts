@@ -15,6 +15,7 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled= true
     }
 
     buildTypes {
@@ -45,8 +46,9 @@ dependencies {
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
 //    implementation("com.github.aceware20:microatm:1.0.7")
-    implementation(files("libs/microatm-1.0.7.aar"))
+    implementation(files("libs/microatm-1.0.8.aar"))
 //    implementation(project(":mylibrary"))
 //    implementation (libs.microatm)
     implementation ("com.google.code.gson:gson:2.10.1")
+    implementation("com.android.support:multidex:1.0.3")
 }

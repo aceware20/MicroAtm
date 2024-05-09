@@ -44,7 +44,7 @@ publishing {
         register<MavenPublication>("release") {
             groupId = "com.github.aceware20"
             artifactId = "microatm"
-            version = "1.0.8"
+            version = "1.0.9"
 
             afterEvaluate {
                 from(components["release"])
@@ -68,13 +68,14 @@ dependencies {
     implementation(files("libs/ksoap2-android-assembly-3.6.4-jar-with-dependencies.jar"))
     implementation(files("libs/morefun_mpos_sdk_v2.1.20210628.jar"))
     implementation(files("libs/logging-interceptor-5.0.0-alpha.14.jar"))
+    implementation(files("libs/okhttp-5.0.0-alpha.14.jar"))
     implementation (project(":fingpaymicroatm-release"))
 //    api(fileTree(mapOf("include" to listOf("fingpaymicroatm-release.aar"), "dir" to "libs")))
 //    implementation(project(":finpay"))
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
 //    implementation (libs.logging.interceptor)
-    implementation(libs.okhttp)
+//    implementation(libs.okhttp)
     implementation (libs.okio)
     implementation (libs.gson)
     implementation(libs.converter.scalars)
